@@ -3,8 +3,8 @@
 nova::db::database_connection:           "mysql+pymysql://nova:%{hiera('nova::db::mysql::password')}@%{hiera('service__address__db_regional')}/nova"
 nova::db::api_database_connection:       "mysql+pymysql://nova_api:%{hiera('nova::db::mysql_api::password')}@%{hiera('service__address__db_regional')}/nova_api"
 nova::glance_api_endpoint:               "%{hiera('endpoint__image__internal')}"
-nova::cinder_catalog_info:               'volumev3:cinderv3:internalURL'
-nova::os_region_name:                    "%{location}"
+nova::cinder::catalog_info:               'volumev3:cinderv3:internalURL'
+nova::cinder::os_region_name:                    "%{location}"
 
 
 # logging
@@ -158,7 +158,7 @@ nova::migration::libvirt::live_migration_permit_auto_converge: true
 nova::migration::libvirt::live_migration_permit_post_copy:     true
 
 # set image properties hw_scsi_model=virtio-scsi and hw_disk_bus=scsi to enable
-nova::compute::libvirt::libvirt_hw_disk_discard: 'unmap'
+nova::compute::libvirt::hw_disk_discard: 'unmap'
 
 # migrate (node: compute)
 nova::nova_public_key:
