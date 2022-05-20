@@ -12,3 +12,5 @@ profile::openstack::resource::host_aggregate:
     availability_zone: "%{::location}-default-1"
     metadata:
       type: 'windows'
+
+openstack_version: 'victoria'

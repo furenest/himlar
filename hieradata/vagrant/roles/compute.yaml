@@ -78,3 +78,5 @@ profile::monitoring::collectd::plugins:
   - collectd::plugin::virt
   - collectd::plugin::numa
   - collectd::plugin::processes
+
+openstack_version: 'victoria'
